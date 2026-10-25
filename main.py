@@ -1,0 +1,23 @@
+import aluno as a;
+import turma as t;
+
+alunos = []
+
+def lancarNota (nome, sobrenome, nota):
+    try:
+        alunos.append(a.Aluno(nome, sobrenome, nota));
+    except ValueError:
+        print(f"Falha ao cadastrar {nome}"); 
+
+lancarNota('Fabio', 'Teixeira', 10);
+lancarNota('Fabiano', 'Teixeira', 8);
+lancarNota('Melissa', 'Teixeira', -1);    
+lancarNota('Angela', 'Teixeira', 7);   
+
+turmaObject = t.Turma();
+turmaObject.cadastrarAlunos(alunos);
+
+turmaObject.mostrarAlunos();
+print('*'*30);
+print('Aluno com menor nota:', turmaObject.menorNota.mostrarAluno());
+print('Aluno com maior nota:', turmaObject.maiorNota.mostrarAluno());
